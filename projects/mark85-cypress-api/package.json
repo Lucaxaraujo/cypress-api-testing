@@ -16,6 +16,7 @@
   "author": "Lucas Araujo",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^12.13.0"
+    "cypress": "^12.13.0",
+    "mongodb": "^5.5.0"
   }
 }
