@@ -27,8 +27,10 @@ describe('POST /users', () => {
 
     cy.postUser(user)
       .then(response => {
+        const { message } = response.body
+
         expect(response.status).to.eq(409)
-        expect(response.body.message).to.eq('Duplicated email!')        
+        expect(message).to.eq('Duplicated email!')
       })
   })
 })
