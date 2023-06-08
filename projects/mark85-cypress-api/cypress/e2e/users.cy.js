@@ -34,7 +34,7 @@ describe('POST /users', () => {
       })
   })
 
-  context.only('required fields', () => {
+  context('required fields', () => {
     const user = {
       name: 'Lucas Araujo',
       email: 'teste2@gmail.com',
@@ -42,13 +42,16 @@ describe('POST /users', () => {
     }
 
     it('name is required', () => {
-      delete user.name
+      delete user.name      
 
       cy.postUser(user)
-        .then(response => {
+        .then(response => {            
+          const { message } = response.body
+
           expect(response.status).to.eq(400)
+          expect(message).to.eq('ValidationError: \"name\" is required')
         })
-    })   
+    })
   })
 })
 
