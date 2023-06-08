@@ -14,7 +14,7 @@ describe('POST /users', () => {
       })
   })
 
-  it('Check duplicated email', () => {
+  it.only('Check duplicated email', () => {
     const user = {
       name: 'Teste',
       email: 'teste@gmail.com',
@@ -28,6 +28,7 @@ describe('POST /users', () => {
     cy.postUser(user)
       .then(response => {
         expect(response.status).to.eq(409)
+        expect(response.body.message).to.eq('Duplicated email!')        
       })
   })
 })
