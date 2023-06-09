@@ -67,7 +67,19 @@ describe('POST /users', () => {
           expect(response.status).to.eq(400)
           expect(message).to.eq('ValidationError: \"email\" is required')
         })
-    })    
+    })
+    
+    it('password is required', () => {
+      delete user.password      
+
+      cy.postUser(user)
+        .then(response => {            
+          const { message } = response.body
+
+          expect(response.status).to.eq(400)
+          expect(message).to.eq('ValidationError: \"password\" is required')
+        })
+    })
   })
 })
 
