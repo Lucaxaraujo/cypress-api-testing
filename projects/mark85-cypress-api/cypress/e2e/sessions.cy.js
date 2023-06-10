@@ -1,21 +1,26 @@
 describe('POST /sessions' , () => {
 
   it('user session', () => {
-    const user = {
-      email: "teste@gmail.com",
-      password: "teste123"
+    const userData = {
+      name: 'Lucas Moreira',
+      email: 'lucas@gmail.com',
+      password: 'teste123'
     }
 
-    cy.postSession(user)
+    cy.postSession(userData)
       .then(response => {
+        const {user} = response.body
+
         expect(response.status).to.eq(200)
+        expect(user.name).to.eq(userData.name)
+        expect(user.email).to.eq(userData.email)
       })
   })
 
   it('invalid password', () => {
     const user = {
-      email: "teste@gmail.com",
-      password: "invalidpass"
+      email: 'teste@gmail.com',
+      password: 'invalidpass'
     }
 
     cy.postSession(user)
@@ -26,8 +31,8 @@ describe('POST /sessions' , () => {
 
   it('email not found', () => {
     const user = {
-      email: "401@gmail.com",
-      password: "teste123"
+      email: '401@gmail.com',
+      password: 'teste123'
     }
 
     cy.postSession(user)
@@ -41,7 +46,7 @@ Cypress.Commands.add('postSession', (user) => {
   cy.api({
     url: '/sessions',
     method: 'POST',
-    body: user,
+    body: {email: user.email, password: user.password},
     failOnStatusCode: false
   }).then(response => {return response})
 })
