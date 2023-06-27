@@ -1,0 +1,30 @@
+{
+  "login": {
+    "name": "Chris Bumstead",
+    "email": "cbum@gmail.com",
+    "password": "teste123"
+  },
+  "invalid_password": {
+    "email": "teste@gmail.com",
+    "password": "invalidpass"
+  },
+  "email_not_found": {
+    "email": "404@gmail.com",
+    "password": "teste123"
+  },
+  "create": {
+    "name": "Cypress request",
+    "email": "cyrequest@gmail.com",
+    "password": "teste123"
+  },
+  "duplicated_email": {
+    "name": "Teste",
+    "email": "teste@gmail.com",
+    "password": "teste123"
+  },
+  "required": {
+    "name": "Lucas Araujo",
+    "email": "teste@gmail.com",
+    "password": "teste123"
+  }
+}
