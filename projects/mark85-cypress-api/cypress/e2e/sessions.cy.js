@@ -1,12 +1,12 @@
 describe('POST /sessions', () => {
 
-  beforeEach(function() {
-    cy.fixture('users').then(function(users) {
+  beforeEach(function () {
+    cy.fixture('users').then(function (users) {
       this.users = users
     })
   })
 
-  it('user session', function() {
+  it('user session', function () {
     const userData = this.users.login
 
     cy.task('deleteUser', userData.email)
@@ -15,7 +15,7 @@ describe('POST /sessions', () => {
     cy.postSession(userData)
       .then(response => {
         expect(response.status).to.eq(200)
-        
+
         const { user, token } = response.body
 
         expect(user.name).to.eq(userData.name)
@@ -24,7 +24,7 @@ describe('POST /sessions', () => {
       })
   })
 
-  it('invalid password', function() {
+  it('invalid password', function () {
     const user = this.users.invalid_password
 
     cy.postSession(user)
@@ -33,7 +33,7 @@ describe('POST /sessions', () => {
       })
   })
 
-  it('email not found', function() {
+  it('email not found', function () {
     const user = this.users.email_not_found
 
     cy.postSession(user)

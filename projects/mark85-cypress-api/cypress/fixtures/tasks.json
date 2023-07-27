@@ -1,0 +1,17 @@
+{
+  "create": {
+    "user": {
+      "name": "Lucas Moreira",
+      "email": "lucas@gmail.com",
+      "password": "teste123"
+    },
+    "task": {
+      "name": "Lucas Moreira",
+      "tags": [
+        "nubank",
+        "BTG",
+        "ourocard"
+      ]
+    }
+  }
+}
