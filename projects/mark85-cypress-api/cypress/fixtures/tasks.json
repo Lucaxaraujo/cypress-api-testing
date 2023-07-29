@@ -13,5 +13,15 @@
         "ourocard"
       ]
     }
+  },
+  "duplicated_task": {
+    "user": {
+      "name": "Michael Scott",
+      "email": "michael@yahoo.com",
+      "password": "teste123"
+    },
+    "task": {
+      "name": "Reunião geral em 15 minutos"
+    }
   }
 }
