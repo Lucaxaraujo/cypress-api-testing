@@ -1,0 +1,32 @@
+{
+  "list": {
+    "user": {
+      "name": "Jonnah Hill",
+      "email": "jonnah@gmail.com",
+      "password": "teste123"
+    },
+    "tasks": [
+      {
+        "name": "Estudar Javascript",
+        "tags": [
+          "qax"
+        ]
+      },
+      {
+        "name": "Aplicar pra vagas de QA",
+        "tags": [
+          "linkedin",
+          "gupy"
+        ]
+      },
+      {
+        "name": "Estudar cypress",
+        "tags": [
+          "javascript",
+          "nodejs",
+          "cypress"
+        ]
+      }
+    ]
+  }
+}
