@@ -28,5 +28,21 @@
         ]
       }
     ]
+  },
+  "uniqueTask": {
+    "user": {
+      "name": "Tony Stark",
+      "email": "tony@stark.com",
+      "password": "teste123"
+    },
+    "task": 
+      {
+        "name": "Construir a Mark87",
+        "tags": [
+          "ark",
+          "nanotech",
+          "friday"
+        ]
+      }
   }
 }
