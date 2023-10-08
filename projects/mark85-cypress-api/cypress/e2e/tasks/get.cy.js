@@ -46,7 +46,7 @@ describe('GET /tasks/:id', () => {
     })
   })
 
-  it.only('Get unique task', function () {
+  it('Get unique task', function () {
     const { user, task } = this.tasks.uniqueTask
 
     cy.task('deleteTask', task.name, user.email)
@@ -68,6 +68,45 @@ describe('GET /tasks/:id', () => {
               failOnStatusCode: false
             }).then(response => {
               expect(response.status).to.eq(200)
+            })
+          })
+
+      })
+  })
+
+  it.only('Task not found', function () {
+    const { user, task } = this.tasks.not_found
+
+    cy.task('deleteTask', task.name, user.email)
+    cy.task('deleteUser', user.email)
+    cy.postUser(user)
+
+    cy.postSession(user)
+      .then(userResponse => {
+
+        cy.postTask(task, userResponse.body.token)
+          .then(taskResponse => {
+
+            cy.api({
+              url: '/tasks/' + taskResponse.body._id,
+              method: 'DELETE',
+              headers: {
+                authorization: userResponse.body.token
+              },
+              failOnStatusCode: false
+            }).then(response => {
+              expect(response.status).to.eq(204)
+            })
+
+            cy.api({
+              url: '/tasks/' + taskResponse.body._id,
+              method: 'GET',
+              headers: {
+                authorization: userResponse.body.token
+              },
+              failOnStatusCode: false
+            }).then(response => {
+              expect(response.status).to.eq(404)
             })
           })
 

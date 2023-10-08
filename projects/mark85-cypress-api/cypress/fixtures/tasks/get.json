@@ -44,5 +44,16 @@
           "friday"
         ]
       }
+  },
+  "not_found": {
+    "user": {
+      "name": "Bruce Banner",
+      "email": "hulk@stark.com",
+      "password": "teste123"
+    },
+    "task": 
+      {
+        "name": "Construir uma máquina de radiação gama"
+      }
   }
 }
