@@ -28,6 +28,8 @@ module.exports = defineConfig({
         }
       })
     },
-    baseUrl: 'http://localhost:3333'
+    baseUrl: 'http://localhost:3333',
+    video: false,
+    screenshotOnRunFailure: false
   },
 });

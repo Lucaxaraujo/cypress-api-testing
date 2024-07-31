@@ -1,4 +1,4 @@
-describe('POST /tasks', () => {
+describe('GET /tasks', () => {
 
   beforeEach(function () {
     cy.fixture('tasks/get').then(function (tasks) {

@@ -1,0 +1,29 @@
+{
+  "remove": {
+    "user": {
+      "name": "Peter Parker",
+      "email": "parker@stark.com",
+      "password": "teste123"
+    },
+    "task": 
+      {
+        "name": "Construir lançadores novos",
+        "tags": [
+          "lançadores",
+          "nanotech",
+          "teias"
+        ]
+      }
+  },
+  "remove_not_found": {
+    "user": {
+      "name": "Bruce Wayne",
+      "email": "bruce@wayne.com",
+      "password": "teste123"
+    },
+    "task": 
+      {
+        "name": "Abastecer batmóvel"
+      }
+  }
+}
