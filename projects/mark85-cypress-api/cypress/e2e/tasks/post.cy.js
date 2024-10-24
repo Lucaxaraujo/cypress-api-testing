@@ -15,7 +15,7 @@ describe('POST /tasks', () => {
         })
     }) 
 
-    it.only('post task', function () {
+    it('post task', function () {
       const { user, task } = this.tasks.create
 
       cy.task('removeUser', user.email)
